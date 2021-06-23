@@ -1,0 +1,12 @@
+Flask api
+using mysql
+XAMP 
+
+ACTIVATE VIRTUAL ENVIROMENT (on windows): venv\Scripts\activate
+
+REQUERIMENTS:
+mysql
+pip install flask
+pip install flask_sqlalchemy 
+pip install mysql-connector-python
+pip install flask-login
