@@ -10,3 +10,4 @@ pip install flask
 pip install flask_sqlalchemy 
 pip install mysql-connector-python
 pip install flask-login
+pip install flask-cors
