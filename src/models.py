@@ -14,7 +14,6 @@ class Link(db.Model):
         self.title = title
         self.url = url
         self.description = description
-        #self.date = db.DateTime(timezone=True)
         self.user_id = user_id
 
     def to_json(self):
