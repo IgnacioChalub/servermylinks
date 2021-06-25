@@ -1,13 +1,13 @@
 from app import db
 from flask_login import UserMixin
+from datetime import datetime
 
 class Link(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100))
     url = db.Column(db.String(500))
     description = db.Column(db.String(350))
-    #date = db.Column(db.DateTime(timezone=True), default=func.now()) #la base de dato pone la date automaticamente
-    #date = db.Column(db.DateTime, default = datetime.utcnow)
+    date = db.Column(db.DateTime, default=datetime.now)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     def __init__(self, title, url, description, user_id):
@@ -21,7 +21,8 @@ class Link(db.Model):
         return {
             "title": self.title,
             "url": self.url,
-            "description": self.description
+            "description": self.description,
+            "date": self.date
         }
 
 
@@ -36,13 +37,6 @@ class User(db.Model, UserMixin):
         self.username = username
         self.password = password
         self.email = email
-
-    def to_json(self):
-        return {
-            "username": self.username,
-            "password": self.password,
-            "email": self.email
-        }
     
     def to_json_without_password(self):
         return {
