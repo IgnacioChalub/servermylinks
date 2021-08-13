@@ -14,7 +14,6 @@ def home():
 #recives json with username, password and email
 @views.route("/signup", methods=['POST'])
 def sign_up():
-
         if not signup_validator(request.json):
             return jsonify({"error": "request format not valid"}), 400
 
@@ -43,7 +42,6 @@ def sign_up():
 #recives a json with username and password
 @views.route("/login", methods=['POST'])
 def login():
-
     if not login_validator(request.json):
         return jsonify({"error": "request format not valid"}), 400
 
@@ -71,7 +69,6 @@ def logout():
 @views.route("/add", methods=['POST'])
 @login_required
 def add_link():
-
     if not add_link_validator(request.json):
         return jsonify({"error": "request format not valid"}), 400
 
