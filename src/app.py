@@ -10,7 +10,7 @@ def create_app():
     CORS(app)
 
     app.config['SECRET_KEY'] = 'very secret key'
-    app.config['SQLALCHEMY_DATABASE_URI']='mysql+mysqlconnector://root:@localhost/links'
+    app.config['SQLALCHEMY_DATABASE_URI']='mysql+mysqlconnector://ignacio:ignaciochalub@localhost/mylinks'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
     db.init_app(app)
