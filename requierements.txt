@@ -3,7 +3,8 @@ using mysql
 XAMP 
 
 ACTIVATE VIRTUAL ENVIROMENT (on windows): venv\Scripts\activate
-
+(on linux) 
+. venv/bin/activate
 REQUERIMENTS:
 mysql
 pip install flask
